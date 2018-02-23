@@ -1,2 +1,1 @@
-# checkout
-Supermarket checkout - test task
+# Supermarket checkout
