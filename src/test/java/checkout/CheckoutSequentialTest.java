@@ -1,5 +1,6 @@
 package checkout;
 
+import static checkout.TestData.DELTA;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
@@ -9,9 +10,7 @@ import org.junit.Test;
  */
 public class CheckoutSequentialTest {
 
-  private static final double DELTA = 0.001;
-
-  private Checkout checkout = new Checkout(new PricingRules());
+  private Checkout checkout = new Checkout(new TestData().getPricingRules());
 
   @Test
   public void testScanAndTotal() {

@@ -1,5 +1,6 @@
 package checkout;
 
+import static checkout.TestData.DELTA;
 import static java.util.Arrays.asList;
 import static org.junit.Assert.assertEquals;
 
@@ -13,8 +14,6 @@ import org.junit.runners.Parameterized;
  */
 @RunWith(Parameterized.class)
 public class CheckoutTest {
-
-  private static final double DELTA = 0.001;
 
   private List<String> codes;
   private Double total;
@@ -36,7 +35,7 @@ public class CheckoutTest {
 
   @Test
   public void testGetTotal() {
-    Checkout checkout = new Checkout(new PricingRules());
+    Checkout checkout = new Checkout(new TestData().getPricingRules());
     codes.forEach(checkout::scan);
     assertEquals("Wrong checkout total", total, checkout.getTotal(), DELTA);
   }
