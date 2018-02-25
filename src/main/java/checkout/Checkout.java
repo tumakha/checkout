@@ -19,12 +19,18 @@ public class Checkout {
   }
 
   public void scan(String itemCode) {
-    items.compute(itemCode, (code, count) -> ofNullable(count).orElse(0) + 1);
+    items.compute(itemCode, (code, quantity) -> ofNullable(quantity).orElse(0) + 1);
   }
 
   public Double getTotal() {
     return items.entrySet().stream()
-        .mapToDouble(e -> pricingRules.getPrice(e.getKey()) * e.getValue()).sum();
+        .mapToDouble(e -> getItemTotal(e.getKey(), e.getValue())).sum();
+  }
+
+  private Double getItemTotal(String code, Integer quantity) {
+    Double price = pricingRules.getPrice(code);
+    return pricingRules.getDiscount(code)
+        .map(discount -> discount.getItemTotal(quantity, price)).orElse(price * quantity);
   }
 
 }

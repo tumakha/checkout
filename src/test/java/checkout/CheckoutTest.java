@@ -28,8 +28,13 @@ public class CheckoutTest {
     return asList(new Object[][]{
         {"", 0.0},
         {"A", 0.50},
+        {"B", 0.30},
+        {"C", 2.00},
+        {"D", 0.75},
         {"AB", 0.80},
-        {"CDBA", 3.55},
+        {"AAABBD", 2.50},
+        {"DABABA", 2.50},
+        {"AAAAAABBBBBBCCCCCCDDDDDD", 20.45},
     });
   }
 
