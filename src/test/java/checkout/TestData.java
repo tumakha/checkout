@@ -2,7 +2,6 @@ package checkout;
 
 import static checkout.discount.Buy3For2.BUY_3_FOR_2_DISCOUNT;
 
-import checkout.discount.Buy3For2;
 import checkout.discount.BuyQuantityForPrice;
 import checkout.discount.Discount;
 import java.util.HashMap;
