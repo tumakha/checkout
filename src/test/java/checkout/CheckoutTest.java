@@ -34,7 +34,7 @@ public class CheckoutTest {
         {"AB", 0.80},
         {"AAABBD", 2.50},
         {"DABABA", 2.50},
-        {"AAAAAABBBBBBCCCCCCDDDDDD", 20.45},
+        {"AAAAAABBBBBBCCCCCCDDDDDD", 16.45},
     });
   }
 
