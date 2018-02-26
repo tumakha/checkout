@@ -10,7 +10,7 @@ import java.util.Map;
  */
 public class TestData {
 
-  static final double DELTA = 0.001;
+  public static final double DELTA = 0.001;
 
   public PricingRules getPricingRules() {
     return new PricingRules(getPrices(), getDiscounts());
